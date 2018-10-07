@@ -1,0 +1,40 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "name": "Cooper",
+      "age": 18,
+      "address": "Rockdale"
+    },
+    {
+      "id": 2,
+      "name": "Cooper",
+      "age": 28,
+      "address": "Rockdale"
+    },
+    {
+      "id": 3,
+      "name": "Cooper",
+      "age": 38,
+      "address": "Rockdale"
+    },
+    {
+      "id": 4,
+      "name": "Cooper",
+      "age": 48,
+      "address": "Rockdale"
+    },
+    {
+      "id": 5,
+      "name": "Cooper",
+      "age": 58,
+      "address": "Rockdale"
+    },
+    {
+      "id": 6,
+      "name": "Cooper",
+      "age": 68,
+      "address": "Rockdale"
+    }
+  ]
+}

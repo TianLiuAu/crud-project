@@ -1,28 +1,26 @@
 # crud-project
-
-Project Title
 a website to help students to select class and create a time table.
 
-Getting Started
+# Getting Started
 nodemon app.js
 
-Prerequisites
+# Prerequisites
 Frontend is vue.js, backend is express.js
 
-Give examples
+# Give examples
 #will come soon...
 
-Running the tests
+# Running the tests
 E#will come soon
 
-Versioning
+# Versioning
 V1.0
 
-Authors
+# Authors
 Tian - Initial work
 
-License
+# License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-Acknowledgments
+# Acknowledgments
 Thanks to C for your advice on this project.

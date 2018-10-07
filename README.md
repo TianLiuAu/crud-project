@@ -1,4 +1,4 @@
-# crud-project
+# Student Timetable
 a website to help students to select class and create a time table.
 
 # Getting Started

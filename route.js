@@ -39,6 +39,14 @@ router.get('/students', function(req,res) {
 
 );
 
+router.get('/logout', function(req,res) {
+        if (req.session.login == 1){
+            res.redirect('/login')
+        }
+    }
+
+);
+
 router.get('/students/new', function(req, res) {
     if (req.session.login == 1) {
         res.render('new.html')

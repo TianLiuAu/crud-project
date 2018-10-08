@@ -4,9 +4,33 @@ const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database('./CRUD.db');
 
 exports.updateTimetable = function(module_time, callback) {
-    let sql = `INSERT INTO modules_time(module_id, time_id) VALUES(?,?)`;
     var module_id = parseInt(module_time.module_id);
     var time_id = module_time.time_id;
+
+    console.log("This is module time: ",time_id);
+
+    let sql_no_duplicate =  `SELECT * FROM modules_time WHERE module_id = ?`;
+
+    console.log(typeof module_id);
+
+    db.each(sql_no_duplicate,[module_id],(err,row) => {
+        if(err){
+            callback(err);
+        }
+
+        console.log("already come here",row.time_id);
+        console.log("row id type is:",typeof row.time_id);
+        console.log(row.time_id == time_id);
+
+        if (row.time_id == time_id){
+            alert("This time already exist");
+            callback();
+            // return false;
+        }
+
+    });
+
+    let sql = `INSERT INTO modules_time(module_id, time_id) VALUES(?,?)`;
     for (var i in time_id){
         db.run(sql, [module_id, parseInt(time_id[i])], function(err) {
             if(err){
@@ -17,6 +41,7 @@ exports.updateTimetable = function(module_time, callback) {
 
         })
     }
+
 };
 
 exports.listTime = function(module_id, callback) {

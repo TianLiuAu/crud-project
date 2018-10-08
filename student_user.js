@@ -16,7 +16,12 @@ exports.findModulesbyUser = function(email, callback) {
     });
 
 // close the database connection
-    //db.close();
+//     db.close((err)=>{
+//         if (err){
+//             return console.error(err.message);
+//         }
+//         console.log('Close the DB connection.');
+//     });
 };
 
 exports.findTimeByUser = function(email, callback) {

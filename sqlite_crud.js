@@ -18,7 +18,12 @@ exports.findAll = function(callback) {
     });
 
 // close the database connection
-    //db.close();
+//     db.close((err)=>{
+//         if (err){
+//             return console.error(err.message);
+//         }
+//         console.log('Close the DB connection.');
+//     });
 };
 
 exports.save = function(student, callback){
@@ -42,7 +47,12 @@ exports.save = function(student, callback){
     });
 
     // close the database connection
-    //db.close();
+    // db.close((err)=>{
+//         if (err){
+//             return console.error(err.message);
+//         }
+//         console.log('Close the DB connection.');
+//     });
 };
 
 exports.deleteUser = function(email, callback){

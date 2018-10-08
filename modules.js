@@ -16,7 +16,12 @@ exports.findModules = function(callback) {
     });
 
 // close the database connection
-    //db.close();
+//     db.close((err)=>{
+//         if (err){
+//             return console.error(err.message);
+//         }
+//         console.log('Close the DB connection.');
+//     });
 };
 
 exports.AddMoudules = function(module, callback) {
@@ -27,13 +32,29 @@ exports.AddMoudules = function(module, callback) {
             callback(err);
         }
         // get the last insert id
-        console.log(`A row has been inserted with rowid`);
+        console.log('A row has been inserted with rowid');
         callback();
     });
 
     // close the database connection
-    //db.close();
+    // db.close((err)=>{
+//         if (err){
+//             return console.error(err.message);
+//         }
+//         console.log('Close the DB connection.');
+//     });
 };
+
+exports.deleteModules = function(module_id,callback){
+    let sql = `DELETE FROM modules WHERE module_id = ?`;
+    db.run(sql,[module_id],function (err) {
+        if(err) {
+            callback(err);
+        }
+        console.log('a row has been removed');
+        callback();
+    })
+}
 
 exports.chooseModules = function(user_mail, modules, callback) {
     var user_mail = user_mail;

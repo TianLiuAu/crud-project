@@ -155,6 +155,7 @@ router.post('/modules/new', function(req, res) {
     res.redirect("/modules")
 });
 
+
 router.get('/modules/timetable', function(req,res) {
     if (req.session.login == 1){
     console.log("Module ID is :", req.query.module_id)
@@ -188,6 +189,17 @@ router.get('/modules/timetable/list', function(req,res) {
 } else{
         res.redirect('/login')
     }
+});
+
+router.get('/modules/timetable/delete',function (req,res) {
+    // console.log(req.body);
+    modules_api.deleteModules(req.query.module_id,function (err) {
+        if(err){
+            res.state(500).send("Internal Server Error");
+        }
+        // res.render('modules.html',{ modules: modules})
+    });
+    res.redirect("/modules")
 });
 
 router.get('/userPage', function(req,res) {

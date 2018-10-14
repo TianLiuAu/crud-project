@@ -1,0 +1,362 @@
+running .....
+running .....
+Sun, 14 Oct 2018 09:35:42 GMT express deprecated res.send(status): Use res.sendStatus(status) instead at app.js:15:9
+{ username: '',
+  password: '123456',
+  email: '83diwaid@uts.edu.au',
+  age: '12',
+  address: '11 Burwood Road',
+  name: 'IT' }
+123456
+the username is: IT
+1
+{ username: '',
+  password: '1234563',
+  email: '83diwaid@uts.edu.au',
+  age: '12',
+  address: '11 Burwood Road',
+  name: 'IT' }
+1234563
+the username is: IT
+undefined
+A row has been inserted with rowid
+0
+{ username: '83diwaid@uts.edu.au',
+  password: '1234567',
+  token: '' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234567',
+  token: '' }
+false
+{ username: '83diwaid@uts.edu.au',
+  password: '1234566',
+  token: '' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234566',
+  token: '' }
+false
+{ username: '83diwaid@uts.edu.au',
+  password: '1234561',
+  token: '' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234561',
+  token: '' }
+false
+{ username: '83diwaid@uts.edu.au',
+  password: '1234562',
+  token: '' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234562',
+  token: '' }
+false
+{ username: '83diwaid@uts.edu.au',
+  password: '1234563',
+  token: '' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234563',
+  token: '' }
+true
+received token : { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjgzZGl3YWlkQHV0cy5lZHUuYXUiLCJpYXQiOjE1Mzk1MDk3ODMsImV4cCI6MTUzOTU5NjE4M30.h8DR6oxrlw8Vl9rN8u5OWA5D5ZToAIaRP2Xt62sELb4' }
+{ username: '83diwaid@uts.edu.au',
+  iat: 1539509783,
+  exp: 1539596183 }
+{ email: '83diwaid@uts.edu.au' }
+input email is : 83diwaid@uts.edu.au
+[]
+modules is :  []
+[ { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 68 },
+  { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    description: 'English',
+    numberlikes: 49 },
+  { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    description: 'dwqadsad',
+    numberlikes: 124 } ]
+[]
+timetable is : []
+83diwaid@uts.edu.au
+3
+choose modules []
+3
+Current Modules are : 3
+current modules times [ { time_id: 1 }, { time_id: 2 } ]
+all of the time_ids in modules : [ { time_id: 1 }, { time_id: 2 } ]
+1
+2
+[ 2, 1 ]
+round undefined
+undefined
+round undefined
+undefined
+all of the time_ids: { '1': 1, '2': 1 }
+result is : true
+input usermial is : 83diwaid@uts.edu.au
+student_id : 43
+module_id : 3
+module_id inserted 3
+[ { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 68 },
+  { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    description: 'English',
+    numberlikes: 49 },
+  { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    description: 'dwqadsad',
+    numberlikes: 124 } ]
+{ email: '83diwaid@uts.edu.au' }
+input email is : 83diwaid@uts.edu.au
+[ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+modules is :  [ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+[ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+timetable is : [ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+received token : { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjgzZGl3YWlkQHV0cy5lZHUuYXUiLCJpYXQiOjE1Mzk1MDk3ODMsImV4cCI6MTUzOTU5NjE4M30.h8DR6oxrlw8Vl9rN8u5OWA5D5ZToAIaRP2Xt62sELb4' }
+{ username: '83diwaid@uts.edu.au',
+  iat: 1539509783,
+  exp: 1539596183 }
+[ { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    numberlikes: 124 },
+  { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    numberlikes: 68 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    numberlikes: 49 },
+  { module_id: 3, name: 'PE', coodinator: null, numberlikes: 21 } ]
+received token : { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjgzZGl3YWlkQHV0cy5lZHUuYXUiLCJpYXQiOjE1Mzk1MDk3ODMsImV4cCI6MTUzOTU5NjE4M30.h8DR6oxrlw8Vl9rN8u5OWA5D5ZToAIaRP2Xt62sELb4' }
+{ username: '83diwaid@uts.edu.au',
+  iat: 1539509783,
+  exp: 1539596183 }
+[ { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    numberlikes: 124 },
+  { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    numberlikes: 68 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    numberlikes: 49 },
+  { module_id: 3, name: 'PE', coodinator: null, numberlikes: 21 } ]
+None Module_id 9
+like status is : { like_status: 'false' }
+[ { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    numberlikes: 125 },
+  { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    numberlikes: 68 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    numberlikes: 49 },
+  { module_id: 3, name: 'PE', coodinator: null, numberlikes: 21 } ]
+None Module_id 9
+like status is : { like_status: 'true' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234563',
+  token: '' }
+{ username: '83diwaid@uts.edu.au',
+  password: '1234563',
+  token: '' }
+true
+received token : { token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjgzZGl3YWlkQHV0cy5lZHUuYXUiLCJpYXQiOjE1Mzk1MTQzMDQsImV4cCI6MTUzOTYwMDcwNH0.m39XKAjsiECghWg7IFipdOd4krKovFTB5Yjp9RjJPGA' }
+{ username: '83diwaid@uts.edu.au',
+  iat: 1539514304,
+  exp: 1539600704 }
+{ email: '83diwaid@uts.edu.au' }
+input email is : 83diwaid@uts.edu.au
+[ { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 68 },
+  { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    description: 'English',
+    numberlikes: 49 },
+  { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    description: 'dwqadsad',
+    numberlikes: 125 } ]
+[ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+modules is :  [ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+[ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+timetable is : [ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+{ email: '83diwaid@uts.edu.au' }
+input email is : 83diwaid@uts.edu.au
+[ { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 68 },
+  { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    description: 'English',
+    numberlikes: 49 },
+  { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    description: 'dwqadsad',
+    numberlikes: 125 } ]
+[ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+modules is :  [ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+[ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+timetable is : [ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+{ email: '83diwaid@uts.edu.au' }
+input email is : 83diwaid@uts.edu.au
+[ { module_id: 2,
+    name: 'Chinese',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 68 },
+  { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 },
+  { module_id: 4,
+    name: 'English',
+    coodinator: 'Shawn',
+    description: 'English',
+    numberlikes: 49 },
+  { module_id: 9,
+    name: 'dwawdw',
+    coodinator: 'dwadxwa',
+    description: 'dwqadsad',
+    numberlikes: 125 } ]
+[ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+modules is :  [ { module_id: 3,
+    name: 'PE',
+    coodinator: null,
+    description: 'Chinese Good',
+    numberlikes: 21 } ]
+[ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]
+timetable is : [ { module_id: 3,
+    weekday: 'Mon',
+    start_time: '8AM',
+    end_time: '10AM' },
+  { module_id: 3,
+    weekday: 'Mon',
+    start_time: '10AM',
+    end_time: '12AM' } ]

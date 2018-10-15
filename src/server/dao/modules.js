@@ -96,9 +96,10 @@ exports.chooseModules = function (user_mail, modules, callback) {
           callback("Please Input One Module", 1)
         } else {
           console.log("current modules times", ntime_ids);
-          alltime_ids = ctime_ids.concat(ntime_ids);
-          console.log("all of the time_ids in modules :" ,alltime_ids);
-          result = checkrepeat(alltime_ids);
+          // alltime_ids = ctime_ids.concat(ntime_ids);
+          // console.log("all of the time_ids in modules :" ,alltime_ids);
+          // result = checkrepeat(alltime_ids);
+          result = checkrepeat(ctime_ids, ntime_ids);
           console.log("result is :", result);
           if (result === true) {
             console.log("input usermial is :", user_mail)
@@ -150,35 +151,45 @@ exports.chooseModules = function (user_mail, modules, callback) {
     }
   };
 
-  function checkrepeat(list) {
-    array = [];
-    confliclist = [];
-    for (var i in list) {
-      console.log(list[i]['time_id'])
-      array.unshift(list[i]['time_id'])
-    }
-    console.log(array);
-    d = [];
-    a = [];
-    ojb2 = new Object();
-    for (let j in array) {
-      console.log("round", d[i]);
-      console.log(ojb2[a[i]])
-      if (ojb2[array[j]] === undefined) {
-        ojb2[array[j]] = 1;
-      } else {
-        console.log("test:", ojb2[array[j]])
-        ojb2[array[j]]++;
+  // function checkrepeat(list) {
+  //   array = [];
+  //   confliclist = [];
+  //   for (var i in list) {
+  //     console.log(list[i]['time_id'])
+  //     array.unshift(list[i]['time_id'])
+  //   }
+  //   console.log(array);
+  //   d = [];
+  //   a = [];
+  //   ojb2 = new Object();
+  //   for (let j in array) {
+  //     console.log("round", d[i]);
+  //     console.log(ojb2[a[i]])
+  //     if (ojb2[array[j]] === undefined) {
+  //       ojb2[array[j]] = 1;
+  //     } else {
+  //       console.log("test:", ojb2[array[j]])
+  //       ojb2[array[j]]++;
+  //     }
+  //   }
+  //   console.log("all of the time_ids:" ,ojb2);
+  //   result = true;
+  //   for (let k in ojb2) {
+  //     if (ojb2[k] !== 1) {
+  //       return false
+  //     }
+  //   }
+  //   return result;
+  // }
+  function checkrepeat(old_list, new_list) {
+    for(var i=0;i<old_list.length();i++){
+      for(var j=0;j<new_list.length();j++){
+        if(old_list[i]===new_list[j]){
+          return false;
+        }
       }
     }
-    console.log("all of the time_ids:" ,ojb2);
-    result = true;
-    for (let k in ojb2) {
-      if (ojb2[k] !== 1) {
-        return false
-      }
-    }
-    return result;
+    return true;
   }
 
   function insertModulesId(email, module_id, callback) {

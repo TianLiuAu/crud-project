@@ -1,26 +1,21 @@
-# Student Timetable
-a website to help students to select class and create a time table.
+# crud-front-vue
 
-# Getting Started
-nodemon app.js
+> A Vue.js project
 
-# Prerequisites
-Frontend is vue.js, backend is express.js
+## Build Setup
 
-# Give examples
-#will come soon...
+``` bash
+# install dependencies
+npm install
 
-# Running the tests
-E#will come soon
+# serve with hot reload at localhost:8080
+npm run dev
 
-# Versioning
-V1.0
+# build for production with minification
+npm run build
 
-# Authors
-Tian - Initial work
+# build for production and view the bundle analyzer report
+npm run build --report
+```
 
-# License
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-# Acknowledgments
-Thanks to C for your advice on this project.
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

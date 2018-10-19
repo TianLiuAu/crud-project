@@ -29,6 +29,7 @@ npm run dev
 open the link http://localhost:8080 by your browser.
 
 If you meet below error1 when start server:
+
 ------------------------------------------------------------------------------------------------------------------------------
 module.js:478
     throw err;
@@ -37,10 +38,12 @@ module.js:478
 Error: Cannot find module '/home/ec2-user/crud-project/node_modules/sqlite3/lib/binding/node-v48-linux-x64/node_sqlite3.node'
 
 ------------------------------------------------------------------------------------------------------------------------------
+
 please run below command:
   npm install --save sqlite3
   
 If you meet below error2 when start server:
+
 ------------------------------------------------------------------------------------------------------------------------------
 module.js:478
     throw err;
@@ -49,6 +52,7 @@ module.js:478
 Error: Cannot find module 'bcrypt'
 
 ------------------------------------------------------------------------------------------------------------------------------
+
 please run below command:
  npm install --save bcrypt
 

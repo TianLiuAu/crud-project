@@ -1,6 +1,22 @@
+/**
+ * operations of user include authenticate, add, find time by user and find module by user
+ * @module userAPI
+ * @see module: '../dao/userCRUD'
+ */
+
 const SQLITE3 = require('sqlite3').verbose();
+var bcrypt = require('bcrypt');
+
 var db = new SQLITE3.Database('../../CRUD.db');
 
+const SALTROUNDS = 10;
+const SALT = bcrypt.genSaltSync(SALTROUNDS);
+
+/**
+ * to check if the user's password is right or not
+ * @param user {object} - get the user name and password
+ * @param callback {function} - return result of authentication
+ */
 exports.authUser = function(user, callback) {
   var sql_pass = `SELECT password FROM login WHERE username= ?`;
   var name = user.username;
@@ -11,7 +27,8 @@ exports.authUser = function(user, callback) {
 
   db.get(sql_pass, [name], function(err, pass) {
     try{
-      if (user.password === pass.password) {
+      // compare the password from frontend and database
+      if (bcrypt.compareSync(user.password, pass.password)) {
         callback(null, true, user.username);
       }else{
         callback(null, false);
@@ -22,33 +39,53 @@ exports.authUser = function(user, callback) {
   })
 };
 
+/**
+ * to add new user
+ * @param user {object} - contain new user information
+ * @param callback {function} - return if create new user successful or not
+ */
 exports.addUser = function(user, callback) {
+  // regex to test email end with @uts.edu.au
   var repr_email = /@uts\.edu\.au\b/i;
+  // regex to test user name only contain string
   var repr_name = /^([A-Za-z].*)/;
 
   if(user.age === undefined){
+    // age can't be blank
     callback('Cannot age as blank', 1);
   }else if(user.name === undefined){
+    // user name can't be blank
     callback('Cannot leave username as blank', 1);
   }else if (user.name.match(repr_name) === null){
+    // user name should be string only
     callback('UserName can only be string', 1);
   }else if(user.address === undefined){
+    // user address shouldn't be blank
     callback('Cannot leave address as blank', 1);
   }else if(user.password.length < 6 || user.password.length > 20){
+    // the password length should between 6 to 20 charactors
     callback('Password length needs between 6 to 20 characters', 1);
   }else if(user.age >= 70){
+    // age shouldn't be more than 70
     callback('Age cannot be higher than 70', 2);
   }else if(user.age <= 6){
+    // age shouldn't be less than 6
     callback('Age cannot be lower than 6', 2);
   }else if(repr_email.test(user.email)===true){
+    //use bcrypt to encrypt password
+    var hash = bcrypt.hashSync(user.password, SALT);
+    user.password = hash;
+    // if all above infomration is right, then update student table and user login table
     var sql_student = `INSERT INTO students(name,age,address,email,role, like_status) VALUES(?,?,?,?,?,?)`;
     var sql_user = `INSERT INTO login(username,password) VALUES(?,?)`;
     var sql_search_exist_email = `SELECT username FROM login WHERE username = (?)`;
 
     db.get(sql_search_exist_email, [user.email], function(err, email_in_db) {
       if(email_in_db){
+        // to check if email exist already
         callback('The User email already registered', 4);
       }else{
+        // insert value into students table
         db.run(sql_student, [user.name, user.age, user.address, user.email, 'User', 'false'], function (err) {
           db.run(sql_user, [user.email, user.password]);
 
@@ -82,6 +119,11 @@ exports.findModulesByUser = function(email, callback) {
   });
 };
 
+/**
+ * to get the course time by user's module
+ * @param email {string} - get the user information by user id
+ * @param callback {function} - return timetable if success
+ */
 exports.findTimeByUser = function(email, callback) {
   var name = email;
   var sql = `SELECT mt.module_id, t.weekday, t.start_time, t.end_time 

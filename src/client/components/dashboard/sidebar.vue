@@ -1,3 +1,5 @@
+<!--template for left side bar,
+it contains three buttons: Choose Your Modules,Favorite Modules, Like Your Modules-->
 <template>
   <div>
     <div class="container-fluid">
@@ -20,7 +22,7 @@
               <li class="nav-item">
                 <a class="nav-link active" @click="like_button_module">
                   <span data-feather="shopping-cart"></span>
-                  Like Your Module <span class="sr-only"></span>
+                  Like Your Modules <span class="sr-only"></span>
                 </a>
               </li>
             </ul>
@@ -39,23 +41,28 @@
 
 <script>
   export default {
+    // define errors for any returned error message
     data() {
       return {
         errors: []
       }
     },
+    // define the methods used on the page
     methods: {
       modules_page() {
-        const vm = this;
-        vm.$router.push('/admin/modules');
+        // if click "Choose your Module", set the path as /admin/modules
+        const VM = this;
+        VM.$router.push('/admin/modules');
       },
       favorite_modules() {
-        const vm = this;
-        vm.$router.push('/admin/favorite');
+        // if click "Favorite Module", set the path as /admin/favorite
+        const VM = this;
+        VM.$router.push('/admin/favorite');
       },
       like_button_module() {
-        const vm = this;
-        vm.$router.push('/admin/likebutton');
+        // if click "Like your Modules", set the path as /admin/likebutton
+        const VM = this;
+        VM.$router.push('/admin/likebutton');
       }
     }
   }

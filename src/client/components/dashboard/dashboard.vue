@@ -1,3 +1,5 @@
+<!--this file defines the page structure of the overall windows
+import navigation bar and side bar as its components-->
 <template>
   <div>
   <NavBar/>
@@ -13,10 +15,11 @@
 </template>
 
 <script>
-  import NavBar from "./navbar";
-  import SideBar from "./sidebar";
+  import NavBar from './navbar';
+  import SideBar from './sidebar';
   export default {
     components:{
+      //configure two components: sidebar and navigation bar
       SideBar,
       NavBar,
     },

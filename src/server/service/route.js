@@ -5,8 +5,15 @@ var userAPI= require('../dao/userCRUD');
 var modulesAPI = require('../dao/modulesCRUD');
 var auth = require('../auth/authCheck');
 
+// create a new router
 var router = express.Router();
 
+/**
+ * this route to /login/new, the page used when a new user register
+ * response with status code and message
+ * @method post
+ * @return status status code and message
+ */
 router.post('/login/new', function (req, res) {
   userAPI.addUser(req.body, function (err, status) {
     console.log(status);
@@ -26,6 +33,13 @@ router.post('/login/new', function (req, res) {
   });
 });
 
+/**
+ * this route to /login, user login authentication with username and password
+ * if the input information is not right, will return error message
+ * if the input information is right, a token will be generate for this user
+ * @method post
+ * @return verification status code and message
+ */
 router.post('/login', function (req, res) {
   userAPI.authUser(req.body, function (err, status, user_data) {
     if (err) {
@@ -45,10 +59,11 @@ router.post('/login', function (req, res) {
       });
     } else if (status === true) {
       console.log(status);
-      const payload = {
+      const PAYLOAD = {
         username: user_data
       };
-      var token = jwt.sign(payload, 'shhhhh', {
+      var token = jwt.sign(PAYLOAD, 'shhhhh', {
+        // token will expire in 24 hours
         expiresIn: 60 * 60 * 24
       });
       return res.status(200).json({
@@ -60,6 +75,12 @@ router.post('/login', function (req, res) {
   })
 });
 
+/**
+ * verify if the user have the token to navigate to another web page
+ * to check if the token is right or not
+ * @method post
+ * @return token status code and message
+ */
 router.post('/verify', function (req, res) {
   console.log('received token :', req.body);
   auth.tokenVerify(req.body.token, function (err) {
@@ -77,6 +98,11 @@ router.post('/verify', function (req, res) {
   })
 });
 
+/**
+ * verify if the user have the token to navigate to another web page
+ * to check if the user is authorized
+ * @return verification status code and message
+ */
 router.use(function (req, res, next) {
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
   if (token) {
@@ -97,6 +123,13 @@ router.use(function (req, res, next) {
   }
 });
 
+/**
+ * navigate to /modules
+ * @param dirPath string, the path of the directory
+ * @method get
+ * @return error message if it occurs; or,
+ *         module data in json format
+ */
 router.get('/modules', function (req, res) {
   modulesAPI.findModules(function (err, modules) {
     if (err) {
@@ -106,6 +139,13 @@ router.get('/modules', function (req, res) {
   })
 });
 
+/**
+ * navigate to /user/modules/list/timetable
+ * @param dirPath string, the path of the directory
+ * @method get
+ * @return error message if it occurs; or,
+ *         the find result, email of the user and the user's module and timetable data in json format
+ */
 router.get('/user/modules/list/timetable', function (req, res) {
   var email = req.query.email;
 
@@ -121,6 +161,13 @@ router.get('/user/modules/list/timetable', function (req, res) {
   });
 });
 
+/**
+ * navigate to user/modules:email
+ * @param dirPath string, the path of the directory
+ * @method get
+ * @return error message if it occurs; or,
+ *         the status, email and the user's module data in json format
+ */
 router.get('/user/modules:email', function (req, res) {
   var email = req.params.email;
 
@@ -134,6 +181,13 @@ router.get('/user/modules:email', function (req, res) {
   });
 });
 
+/**
+ * navigate to /modules/choose
+ * @param dirPath string, the path of the directory
+ * @method post
+ * @return error message if it occurs; or,
+ *         the status and message in json format
+ */
 router.post('/modules/choose', function (req, res) {
   var email = req.body.email;
   var modules_ids = req.body.module_id;
@@ -147,6 +201,13 @@ router.post('/modules/choose', function (req, res) {
   })
 });
 
+/**
+ * navigate to /modules/favorite
+ * @param dirPath string, the path of the directory
+ * @method get
+ * @return error message if it occurs; or,
+ *         the status and module data in json format
+ */
 router.get('/modules/favorite', function (req, res) {
   modulesAPI.listFavoritesModules(function (err, modules) {
     if (err) {
@@ -159,6 +220,13 @@ router.get('/modules/favorite', function (req, res) {
   })
 });
 
+/**
+ * navigate to /modules/press/like
+ * @param dirPath string, the path of the directory
+ * @method post
+ * @return error message if it occurs; or
+ *         the status and message in json format
+ */
 router.post('/modules/press/like', function (req, res) {
   var email = req.body.email;
   var module_id = req.body.module_id;

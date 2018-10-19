@@ -6,4 +6,4 @@ module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
   APIPATH: '"http://localhost:3000"',
   CUSTOMPATH: '"modules"'
-})
+});

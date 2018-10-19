@@ -1,7 +1,7 @@
-<!--This page shows when user click "Choose Your Module" Button;
-It contains module data send from backend;
-User can also select module and this data will send to backend;
-There's also a popup page for the list of select module details-->
+<!--This page shows when user click "Choose Your Module" Button;-->
+<!--It contains module data send from backend;-->
+<!--User can also select module and this data will send to backend;-->
+<!--There's also a popup page for the list of select module details-->
 <template>
   <div>
     <div class="text-right mt-4">

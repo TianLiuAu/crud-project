@@ -1,5 +1,4 @@
-<!--this file define the navigation bar on the top of the page
-it contains the Title of the application and the sign out button-->
+<!--this file define the navigation bar on the top of the page, it contains the Title of the application and the sign out button-->
 <template>
   <div>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">

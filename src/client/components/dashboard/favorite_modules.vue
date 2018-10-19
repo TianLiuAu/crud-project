@@ -1,5 +1,4 @@
-<!--This page display when user click "Favorite Module" Button;
-get module data from backend-->
+<!--This page display when user click "Favorite Module" Button; get module data from backend-->
 <template>
   <div>
     <div>

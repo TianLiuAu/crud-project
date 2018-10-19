@@ -1,6 +1,6 @@
-<!--this page show when user click "Like your Module" button;
-It call module information from the backend;
-User can input by click the radio button -->
+<!--this page show when user click "Like your Module" button;-->
+<!--It call module information from the backend;-->
+<!--User can input by click the radio button -->
 <template>
   <div>
     <div>

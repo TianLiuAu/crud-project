@@ -1,5 +1,4 @@
-<!--template for left side bar,
-it contains three buttons: Choose Your Modules,Favorite Modules, Like Your Modules-->
+<!--template for left side bar,it contains three buttons: Choose Your Modules,Favorite Modules, Like Your Modules-->
 <template>
   <div>
     <div class="container-fluid">

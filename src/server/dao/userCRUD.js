@@ -5,7 +5,12 @@
  */
 
 const SQLITE3 = require('sqlite3').verbose();
+var bcrypt = require('bcrypt');
+
 var db = new SQLITE3.Database('../../CRUD.db');
+
+const SALTROUNDS = 10;
+const SALT = bcrypt.genSaltSync(SALTROUNDS);
 
 /**
  * to check if the user's password is right or not
@@ -22,7 +27,8 @@ exports.authUser = function(user, callback) {
 
   db.get(sql_pass, [name], function(err, pass) {
     try{
-      if (user.password === pass.password) {
+      // compare the password from frontend and database
+      if (bcrypt.compareSync(user.password, pass.password)) {
         callback(null, true, user.username);
       }else{
         callback(null, false);
@@ -66,6 +72,9 @@ exports.addUser = function(user, callback) {
     // age shouldn't be less than 6
     callback('Age cannot be lower than 6', 2);
   }else if(repr_email.test(user.email)===true){
+    //use bcrypt to encrypt password
+    var hash = bcrypt.hashSync(user.password, SALT);
+    user.password = hash;
     // if all above infomration is right, then update student table and user login table
     var sql_student = `INSERT INTO students(name,age,address,email,role, like_status) VALUES(?,?,?,?,?,?)`;
     var sql_user = `INSERT INTO login(username,password) VALUES(?,?)`;

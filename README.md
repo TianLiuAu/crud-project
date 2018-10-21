@@ -16,6 +16,9 @@ user can give one module a LIKE to support the modules(only one time)
 npm and git should be installed on the server before clone this application.
 
 ## Installation
+!!!!! Please change the file name 'crud-project/src/client/components/pages/Login.vue' to  'crud-project/src/client/components/pages/login.vue'. The file's name has been automatically changed to uppercase when push them from local to github. The reason why it happens is still unknown. Please change this file name to make sure the program will run properly.  !!!!!
+
+
 Change directory to where you downlaod the project, and then execute below steps:
 
 npm install         // install dependency
